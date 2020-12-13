@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // border: 1px solid black;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.is-active {
+    font-weight: bold;
+}
