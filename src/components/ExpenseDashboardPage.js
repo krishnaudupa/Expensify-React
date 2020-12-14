@@ -4,7 +4,6 @@ import ExpenseListFilter from './ExpenseListFilter'
 
 const ExpenseDashboardPage = () => (
     <div>
-        This is from ExpenseDashboardPage
         <ExpenseListFilter />
         <ExpenseList />
     </div>
