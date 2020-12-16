@@ -2,3 +2,4 @@ node_modules/
 public/bundle.js
 public/style.css
 public/bundle.js.LICENSE.txt
+.env

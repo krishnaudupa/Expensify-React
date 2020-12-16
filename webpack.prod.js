@@ -3,9 +3,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     mode: "production",
-    plugins: [new MiniCssExtractPlugin({
-        filename: 'style.css'
-    })],
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'style.css'
+        })
+    ],
     entry: './src/app.js',
     output: {
         path: path.join(__dirname, 'public'),

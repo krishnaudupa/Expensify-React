@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`should render NotFoundPage correctly 1`] = `
-<div>
-  <p>
-     404! Error Page not found.
-  </p>
-</div>
-`;
