@@ -13,18 +13,28 @@ import 'react-dates/lib/css/_datepicker.css';
 
 const store = configureStore()
 
-store.dispatch(startSetExpenses()).then(() => {
-    ReactDOM.render(<Provider store={store}><AppRouter /></Provider>, document.getElementById('root'))
-})
+let hasRendered = false
+const renderApp = () => {
+    if (!hasRendered) {
+      ReactDOM.render(<Provider store={store}><AppRouter /></Provider>, document.getElementById('root'))
+      hasRendered = true
+    }
+}
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         store.dispatch(login(user.uid))
-        store.dispatch(startSetExpenses())
+        store.dispatch(startSetExpenses()).then(() => {
+            renderApp();
+            if (history.location.pathname === '/') {
+              history.push('/dashboard')
+            }
+          })
         history.push('/dashboard')
     }
     else{
         store.dispatch(logout())
+        renderApp()
         history.push('/')
     }
 })
